@@ -25,6 +25,12 @@ spec:
               memory: "512Mi"
           ports:
             - containerPort: 8181
+          env:
+            - name: CONFIG_SERVER_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: config_server_access
+                  name: config-server-url
 ---
 apiVersion: v1
 kind: Service

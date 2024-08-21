@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: camel-producer-microservice
+  profiles:
+    active: camel_producer
+  cloud:
+    config:
+      name: camel-producer-microservice,config-client
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
